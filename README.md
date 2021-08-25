@@ -1,1 +1,1 @@
-node src/index.js
+npm start dev
