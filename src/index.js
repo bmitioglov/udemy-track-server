@@ -17,7 +17,8 @@ const mongoUri = 'mongodb+srv://admin:passwordpassword@cluster0.m0hul.mongodb.ne
 
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 mongoose.connection.on('connected', () => {

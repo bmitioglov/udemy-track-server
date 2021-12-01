@@ -15,9 +15,10 @@ router.get('/tracks', async (req, res) => {
 
 router.post('/tracks', async (req, res) => {
   const { name, locations } = req.body;
+  console.log(req.body)
   if (!name || !locations) {
     return res
-      .status(422)
+      .status(423)
       .send({error: 'You must provide a name and locations'});
   }
   try {
@@ -25,7 +26,7 @@ router.post('/tracks', async (req, res) => {
     await track.save();
     res.send(track);
   } catch (err) {
-    res.status(422).send({error: err.message});
+    res.status(424).send({error: err.message});
   }
 })
 
